@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios Básicos em Javascript</title>
+</head>
+<body>
+    <script>
+        // 1 Escreva um programa em Javascript e crie uma variável chamada "nome_do_carro" e atribua-a um valor "Fusca". Exiba-a ao usuário.
+        var nome_do_carro = "Fusca";
+        alert(nome_do_carro);
+
+        // 2 Escreva um programa em Javascript em que o usuário informe o seu nome e exiba a mensagem "Olá, [NomeDoUsuario]".
+        var nome = prompt("Digite seu nome:");
+        alert("Seu nome é: "+nome);
+
+        // 3 Escreva um programa em Javascript em que o usuário informe o seu nome e em seguida o programa perguntará a idade do usuário. Agora o programa deve exibir a mensagem "Olá, [NomeDoUsuario], sua idade é [idade]".
+        var nome = prompt("Digite seu nome:");
+        var idade = parseInt(prompt("Digite sua idade:"));
+        alert("Seu nome é: "+nome);
+        alert("Sua idade é: "+idade);
+
+        //4 Considerando a figura abaixo, escreva um programa para cada forma que calcule e exiba em tela cada uma de suas respectivas áreas. O usuário irá informar os valores de cada variável.
+
+        //Área do retângulo
+        var base = parseFloat(prompt("Digite a base do retângulo"));
+        var altura = parseFloat(prompt("Digite a altura do retângulo"));
+        var area = base*altura; //12 e 5 = 60
+        alert("Área do retângulo: "+area);
+
+        //Área do quadrado
+        var lado = parseFloat(prompt("Digite o lado do quadrado:"));
+        area = lado*lado;
+        alert("Área do quadrado: "+area); // 12 e 12 = 144
+
+        //Área do losango
+        var diagonal_maior = parseFloat(prompt("Digite a diagonal maior do losango:"));
+        var diagonal_menor = parseFloat(prompt("Digite a diagonal menor do losango:"));
+        area = (diagonal_maior*diagonal_menor)/2; //12 e 5 divido por 2 = 30
+        alert("Área do losango: "+area);
+
+        //Área do trapézio
+        var base_maior = parseFloat(prompt("Digite a base maior do trapézio:"));
+        var base_menor = parseFloat(prompt("Digite a base menor do trapézio:"));
+        altura = parseFloat(prompt("Digite a altura do trapézio:"));
+        area = ((base_maior+base_menor)*altura)/2; //12 e 5 vezes 8 divido por 2 = 68
+        alert("Área do trapézio: "+area);
+
+        //Área do paralelogramo 
+        base = parseFloat(prompt("Digite a base do paralelogramo:"));
+        altura = parseFloat(prompt("Digite a altura do paralelogramo:"));
+        area = base*altura; // 12 e 5 = 60
+        alert("Área do paralelogramo: "+area);
+
+        //Área do triângulo
+        base = parseFloat(prompt("Digite a base do triângulo"));
+        altura = parseFloat(prompt("Digite a altura do triângulo:"));
+        area = (base*altura)/2; // 12 e 6 divido por 2 = 36
+        alert("Área do triângulo: "+area);
+
+        //Área do círculo
+        var raio = parseFloat(prompt("Digite o raio do círculo:"));
+        area = (raio*raio)*Math.PI; // 5 e 5 vezez 3,14 = 78.5
+        alert("Área do círculo: "+area);
+
+    </script>
+</body>
+</html>
