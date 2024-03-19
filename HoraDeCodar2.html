@@ -67,10 +67,15 @@
         var valor = 0, valores = [], media = 0, total = 6;
         for(var i=1;i<=total;i++){
             valor = parseFloat(prompt("Exercício 5\nDigite o " + i + " valor:"));
-            valores.push(valor);
+            valores[i-1] = valor;
             media+=valor;
         }
         alert("A média dos valores é: "+media/total);
+        
+        console.log("\nExercício 5");
+        for(var i=0;i<=total;i++){
+            console.log(valores[i]);
+        }
 
         //6. Faça um programa que receba quatro valores informados pelo usuário, mas informe somente o primeiro, o último e o maior de todos eles (considere que todos os números informados serão diferentes)
         valor = 0, valores = [], maior = 0, total = 4;
@@ -137,6 +142,8 @@
         }
         alert("Seu peso ideial é: "+peso_ideal);
 
+
+        //11. Escreva um programa em que o usuário informe 10 valores e escreva quantos desses valores lidos estão entre os números 24 e 42 (incluindo os valores 24 e 42) e quantos deles estão fora deste intervalo.
         var operacao = parseInt(prompt("Exercício 11\nQual operação deseja realizar?\n1 - Adição\n2 - Subtração\n3 - Divisão\n4 - Multiplicação"));
         num1 = parseFloat(prompt("Exercício 11\nInforme o primeiro valor para a operação:"));
         num2 = parseFloat(prompt("Exercício 11\nInforme o segundo valor para a operação:"));
