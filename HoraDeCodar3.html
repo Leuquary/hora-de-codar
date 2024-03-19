@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Codar 3: De volta ao Código</title>
+</head>
+<body>
+    <script>
+        //1. Escreva um algoritmo para ler 2 valores informados pelo usuário e se o segundo valor informado for igual ou menor que ZERO, deve ser lido um novo valor. Ou seja, para o segundo valor não pode ser aceito o valor zero, nem um valor negativo.  O seu programa deve imprimir o resultado da divisão do primeiro valor lido pelo segundo valor.
+        var num1,num2;
+        do{
+           num1 = parseFloat(prompt("Execício 1\nDigite o primeiro valor:"));
+           num2 = parseFloat(prompt("Execício 1\nDigite o segundo valor:"));
+        }while(num2<0);
+        alert("A divisão entre os dois valores é: " + (num1/num2));
+
+        //2. Crie uma bomba relógio (usando somente código - para deixar claro!) cuja contagem regressiva vá de 30 a 0. Utilize "document.write" para escrever em tela e no final da repetição escreva "EXPLOSÃO".
+        for(var i=0;i<=30;i++){
+          document.write("\n"+i);
+        }
+        document.write("\nEXPLOSÃO!!!");
+
+        //3. Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem decrescente. Exemplo: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+        console.log("Execício 3\n")
+        for(var i=0;i<=10;i++){
+          console.log(i);
+        }
+
+        //4. Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100 (inclusive).
+        var total = 0, media = 0;    
+        for(var i=15;i<=100;i++){
+            media+=i;
+            total++;
+        }
+        alert("Exercício 4\nA média é igual a: "+(media/total));
+
+        //5. Faça um algoritmo que calcule e escreva a média aritmética dos dois números inteiros informados pelo usuário e todos os números inteiros entre eles. Considere que o primeiro sempre será menor que o segundo.
+        var inicio = parseInt(prompt("Execício 5\nDigite o valor inicial:"));
+        var fim = parseInt(prompt("Execício 5\nDigite o valor final:"));
+        media = 0, total = 0;
+        for(var i=inicio;i<=fim;i++){
+            media+=i;
+            total++;
+        }
+        alert("A média é igual a: "+(media/total));
+
+        //6. Escreva um programa para ler 2 notas de um aluno, calcular e imprimir a média final. Considere que a nota de aprovação é 9,5. Logo após escrever a mensagem "Calcular a média de outro aluno Sim/Não?" e solicitar um resposta. Se a resposta for "S", o programa deve ser executado novamente, caso contrário deve ser encerrado exibindo a quantidade de alunos aprovados.
+        var nota1, nota2, resposta, aprovados = 0;
+        media = 0;
+        do{
+            nota1 = parseFloat(prompt("Execício 6\nDigite a primeira nota:"));   
+            nota2 = parseFloat(prompt("Execício 6\nDigite a segunda nota:")); 
+            media = (nota1+nota2)/2;
+            if(media>=9.5){
+                aprovados++;
+            }
+            resposta = prompt("Deseja calcular a média de outro aluno? Sim/Não"); 
+        }while(resposta=="Sim");
+        alert("Alunos aprovados: "+aprovados);
+
+        //7 - Escreva um algoritmo para ler as notas de avaliações de um aluno, calcule e imprima a média (simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10) para cada nota. São 6 notas ao total. Caso o valor informado para qualquer uma das notas esteja fora do limite estabelecido, deve ser solicitado um novo valor ao usuário. 
+        valor = 0, media = 0, total = 6;
+        for(var i=1;i<=total;i++){
+            valor = parseFloat(prompt("Exercício 7\nDigite o " + i + " valor:"));
+            media+=valor;
+            if(valor<0||valor>10){
+                i--;
+                alert("Informe um valor entre 0 e 10");
+            }
+        }
+        //8 - Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive). Considere que o N será sempre maior que ZERO. N  é um valor informado pelo usuário
+        var numero = 0;
+        do{
+            numero = parseInt(prompt("Execício 8\nDigite um valor limite:"));
+        }while(numero<0);
+
+        console.log("\nExecício 8\n")
+        for(var i=1;i<=numero;i++){
+            console.log(i);
+        }
+
+        //9. Escreva um algoritmo para imprimir os 10 primeiros números inteiros maiores que 100.
+        console.log("\nExecício 9\n")
+        for(var i=101;i<=110;i++){
+            console.log(i);
+        }
+
+        //10. Escreva um programa para imprimir todas as tabuadas de 1 a N. N será informado pelo usuário.
+        var limite = parseInt(prompt("Execício 10\nLimite da tabuada:"));
+        var tabuada = "";
+        for(var i=1;i<=limite;i++){
+            for(var j=1;j<=10;j++){
+                tabuada += "\n" + i + " x " + j + " = " + (i*j) + "\n";
+            }
+        }
+        console.log(tabuada);
+
+        //11. Escreva um programa em que o usuário informe 10 valores e escreva quantos desses valores lidos estão entre os números 24 e 42 (incluindo os valores 24 e 42) e quantos deles estão fora deste intervalo.
+        valor = 0, dentro_do_intervalo = 0, fora_do_intervalo = 0;
+        for(var i=1;i<=10;i++){
+            valor = parseInt(prompt("Execício 11\nInforme " + i + " valor:"));
+            if((valor>=24)&&(valor<=42)){
+                dentro_do_intervalo++;
+            }else{
+                fora_do_intervalo++;
+            }
+        }
+        alert("Dentro do intervalo: "+dentro_do_intervalo+"\nFora do intervalo: "+fora_do_intervalo);
+    </script>
+</body>
+</html>
