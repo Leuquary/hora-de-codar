@@ -8,15 +8,23 @@
 <body>
     <script>
         // 1. Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles. 
-        var nome_estudante, idade_estudante, nota, cont_estudante = 0, resposta;
+        var resposta, estudantes = [];
+        var estudante = {
+            nome:"",
+            idade:0,
+            nota:0.0
+        };
         do{
-            nome_estudante = prompt("Digite o nome do estudante:");
-            idade_estudante = parseInt(prompt("Digite a idade do estudante:"));
-            nota = parseFloat(prompt("Digite a nota do estudante:"));
-            cont_estudante++;
-            resposta = prompt("Deseja cadastrar outro estudante? Sim/Não");
-        }while(resposta=="Sim");
-        alert("Estudantes cadastrados: "+cont_estudante);
+            estudante.nome = prompt("Digite o nome do estudante:");
+            estudante.idade = parseInt(prompt("Digite a idade do estudante:"));
+            estudante.nota = parseFloat(prompt("Digite a nota do estudante:"));
+            estudantes.push(estudante);
+            resposta = prompt("Se deseja parar digite PARE");
+        }while(resposta!="PARE");
+        alert("Quantidade de estudantes: "+estudantes.length);
+        for(var i=0;i<estudantes.length;i++){
+            console.log(estudantes[i]);
+        }
 
         //2. Crie uma array de planetas que inclua "Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"  e, em seguida, peça ao usuário para digitar o nome de um planeta. 
         var planetas = ["Terra","Marte", "Plutão", "Vênus", "Júpiter", "Saturno"];
