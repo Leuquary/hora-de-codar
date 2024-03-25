@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Codar 4 - Um novo dia para Codar</title>
+</head>
+<body>
+    <script>
+        // 1. Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles. 
+        var nome_estudante, idade_estudante, nota, cont_estudante = 0, resposta;
+        do{
+            nome_estudante = prompt("Digite o nome do estudante:");
+            idade_estudante = parseInt(prompt("Digite a idade do estudante:"));
+            nota = parseFloat(prompt("Digite a nota do estudante:"));
+            cont_estudante++;
+            resposta = prompt("Deseja cadastrar outro estudante? Sim/Não");
+        }while(resposta=="Sim");
+        alert("Estudantes cadastrados: "+cont_estudante);
+
+        //2. Crie uma array de planetas que inclua "Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"  e, em seguida, peça ao usuário para digitar o nome de um planeta. 
+        var planetas = ["Terra","Marte", "Plutão", "Vênus", "Júpiter", "Saturno"];
+        var planeta = prompt("Informe um planeta:");
+        for(var i=0;i<planetas.length;i++){
+            if(planeta==planetas[i]){
+                alert("Planeta encontrado: "+planetas[i]);
+                break;
+            }
+        }
+
+        //3. Vamos criar uma lista de compras. 
+        var frutas = ["Abacaxi","Pêra","Morango","Limão","Maçã","Banana","Mamão"], fruta, encontrado = false;
+        resposta = "";
+        do{ 
+            fruta = prompt(frutas.toString() + "\nEscolha uma fruta");
+            for(var i=0;i<frutas.length;i++){
+                if(fruta==frutas[i]){
+                    frutas.splice(i,1);
+                    encontrado = true;
+                    alert("Fruta foi retirada da lista.");
+                    break;
+                }
+            }
+            if(!encontrado){
+                alert("Fruta indisponível no nosso mercado.");
+            }else{
+                encontrado = false;
+            }
+            resposta = prompt("Deseja retirar outra fruta? Sim/Não");
+        }while((resposta=="Sim")&&(frutas.length!=0));
+        if(frutas.length==0){
+            alert("Lista de compras finalizada.");
+        }
+
+    </script>
+</body>
+</html>
